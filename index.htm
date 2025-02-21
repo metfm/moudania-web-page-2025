@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" href=images/weewx.png>
+<meta charset=utf-8>
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name=description content="Μετεωρολογικός Σταθμός Νέων Μουδανιών Χαλκιδικής">
+<meta name=keywords content="Mετεωρολογικός Σταθμός Νέων Μουδανιών Χαλκιδικής,Μετεωρολογικός σταθμός,webcam,halkidiki, weather data, halkidiki weather station,nea moudania weather station, steelseries">
+<title>Mετεωρολογικός Σταθμός Νέων Μουδανιών Χαλκιδικής</title>
+<link rel=stylesheet href=test.css>
+</head>
+<body>
+<h1>Mετεωρολογικός Σταθμός Νέων Μουδανιών Χαλκιδικής</h1>
+<div id=status>
+<canvas id=canvas_led width=25 height=25></canvas>
+<canvas id=canvas_status width=150 height=25></canvas>
+<canvas id=canvas_timer width=30 height=25></canvas>
+</div><br>
+<div class=scrollmenu>
+<canvas id=canvas_temp class=gaugeSizeStd></canvas>&nbsp;
+<canvas id=canvas_dew class=gaugeSizeStd></canvas>&nbsp;
+<canvas id=canvas_hum class=gaugeSizeStd></canvas>&nbsp;
+<canvas id=canvas_baro class=gaugeSizeStd></canvas>&nbsp;
+<canvas id=canvas_rain class=gaugeSizeStd></canvas>&nbsp;
+<canvas id=canvas_rrate class=gaugeSizeStd></canvas>&nbsp;
+<canvas id=canvas_wind class=gaugeSizeStd></canvas>&nbsp;
+<canvas id=canvas_dir class=gaugeSizeStd></canvas>&nbsp;
+<div class=gauge><canvas id=canvas_rose class=gaugeSizeStd></canvas></div>
+<canvas id=canvas_cloud class=gaugeSizeStd></canvas>
+</div>
+<h2>Mετ. Σταθμοί Χαλκιδικής </h2>
+<div class=scrollmenu>
+<a href=https://app.weathercloud.net/d7104998315#current target=blank>Mουδανιά Κέντρο</a>
+<a href=https://app.weathercloud.net/d7819641374#current target=blank>Καλλικράτεια</a>
+<a href=https://kairos.moudania.com/portaria/index.html target=blank>Πορταριά</a>
+<a href=https://app.weathercloud.net/d3760777442#current target=blank>Ν.Φλογητά</a>
+<a href=http://penteli.meteo.gr/stations/lakkoma-bbs/ target=blank>Λάκκωμα</a>
+<a href=https://app.weathercloud.net/d8027043313#current target=blank>Ν.Τρίγλια</a>
+<a href=https://penteli.meteo.gr/stations/kassandreia/ target=blank>Κασσανδρεία</a>
+<a href=http://www.peristerianos.gr/weather/ target=blank>Νέα Σκιώνη</a>
+<a href=https://app.weathercloud.net/d2645103217#current target=blank>Oρμύλια</a>
+<a href=https://penteli.meteo.gr/stations/vourvourou-ekies/ target=blank>Bουρβουρού</a>
+<a href=http://www.sithoniaweather.gr/ target=blank>Αγ. Νικόλαος</a>
+<a href=https://penteli.meteo.gr/stations/marmaras/ target=blank>Νέος Μαρμαράς</a>
+<a href=https://app.weathercloud.net/d3155999281#current target=blank>Αμμουλιανή</a>
+<a href=https://aristoteliports.gr/weatherierissos/ target=blank>Ιερισσός</a>
+<a href=https://penteli.meteo.gr/stations/stratoni/ target=blank>Στρατώνι</a>
+<a href=https://penteli.meteo.gr/stations/simonopetra/ target=blank>Μονή Σίμωνος Πέτρας</a>
+<a href=https://penteli.meteo.gr/stations/vatopedi/ target=blank>Μονή Βατοπαιδίου</a>
+<a href=https://penteli.meteo.gr/stations/megistilavra/ target=blank>Μονή Μεγίστης Λάυρας</a>
+<a href=https://penteli.meteo.gr/stations/polygyros/ target=blank>Πολύγυρος</a>
+<a href=https://app.weathercloud.net/d7750179371#current target=blank>Πολύγυρος-2</a>
+<a href=https://app.weathercloud.net/d0562413315#current target=blank>Αρναία</a>
+<a href=https://www.wunderground.com/dashboard/pws/IPALEOCH2 target=blank>Παλαιοχωρι</a>
+<a href=https://penteli.meteo.gr/stations/neochori target=blank>Νεοχώρι</a>
+</div>
+<h2>Webcams</h2>
+<div class=scrollmenu>
+<a href=https://kairos.moudania.com/nea-moudania/webcam.jpg  >Nέα Μουδανιά</a>
+<a href="https://cams.elaticam.com/output/afytos/webcamimage.jpg?t=.."  >Αφυτος</a>
+<a href="https://www.meteology.gr/cam/siviri/?t=.."  >Σίβηρη</a>
+<a href="https://www.meteology.gr/cam/agiaparaskevi/?t=.."  >Αγ. Παρασκευή</a>
+<a href="https://www.meteology.gr/cam/pefkochori/?t=.." >Πευκοχώρι</a>
+<a href="https://www.meteology.gr/cam/gerakini/?t=.."  >Γερακινή</a>
+<a href="https://www.camping-melissi.gr/images/melissicam/snap/webcam.jpg?t=.."  >Συκιά</a>
+<a href="https://www.mykosmos.gr/loc_mk/images/webcams/653.jpg?time="  >Αγ. Νικόλαος</a>
+<a href="https://https://www.meteology.gr/cam/sarti/?t=.."  >Σάρτη</a>
+<a href="http://ormos-panagias.sithoniaweather.gr/cam/cam1.jpg?time="  >Ορμος Παναγιάς</a>
+<a href="https://penteli.meteo.gr/stations/megistilavra/cam/megisti_cam.jpg?time="  >Ουρανούπολη</a>
+<a href="https://penteli.meteo.gr/stations/megistilavra/cam/megisti_cam.jpg?time="  >Μονή Μεγίστης Λαύρας</a>
+<a href="https://meteohellas-weathercams.gr/cam/arnaia/?time="  >Αρναία</a>
+<a href="https://meteohellas-weathercams.gr/cam/arnaiaplateia/?time="  >Αρναία2</a>
+<a href="https://meteohellas-weathercams.gr/cam/arnaiadim/?time="  >Αρναία3</a>
+<a href="https://cams.elaticam.com/output/palaiochori/webcamimage.jpg?t=.."  >Παλαιοχώρι</a>
+<a href="https://www.meteology.gr/cam/cholomontas/?t="  >Ταξιάρχης</a>
+</div>
+<h2>Σύνδεσμοι</h2>
+<div class=scrollmenu>
+<a href=moudania>Στατιστικά σταθμού</a>
+<a href=noaa.htm>Aρχεία ΝΟΑΑ</a>
+<a href=http://stratus.meteo.noa.gr/data/metarmaps/SST_01.png target=blank>θερμοκρασία Θάλασσας</a>
+<a href=https://www.meteo60.fr/satellites/animation-satellite-ir-france.gif target=blank>Δορυφορική</a>
+<a href=https://www.blitzortung.org/Images/image_b_gr.png target=blank>Ραντάρ</a>
+<a href=https://data.consumer-digital.api.metoffice.gov.uk/v1/surface-pressure/colour/2025-02-18T0000/FSXX00T_24.gif target=blank>Χ.Επιφανείας</a>
+<a href=https://www.facebook.com/neamoudaniaweatherstation target=blank>facebook</a>
+<a href=mailto:hobbyline187@gmail.com target=blank>Επικοινωνία</a>
+</div>
+<h2> Powered by...</h2>
+<div align=center>
+<img src=/images/barber.jpg alt=barber width=232 height=151>
+</div><br>
+<div align=center>
+<img src=/images/tamam.jpg alt=tamam width=232 height=151>
+</div>
+<script src=https://kairos.moudania.com/scripts/jquery.js></script>
+<script src=https://kairos.moudania.com/scripts/steelseries_tween.min.js></script>
+<script src=https://kairos.moudania.com/scripts/language.min.js></script>
+<script src=https://kairos.moudania.com/scripts/gauges.js></script>
+<script src=https://kairos.moudania.com/scripts/RGraph.common.core.min.js></script>
+<script src=https://kairos.moudania.com/scripts/RGraph.rose.min.js></script>
+<script>setInterval(function(){refreshImg()},2000);function refreshImg(){var d=document.querySelectorAll("body > img");for(var c=d.length-1;c>=0;c--){d[c].src=d[c].src+"&"+new Date().getTime();console.log(d[c].src)}};</script>
+</body>
+</html>
